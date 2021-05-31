@@ -1,0 +1,47 @@
+{
+  "name": "ts-cli",
+  "version": "0.0.0",
+  "author": "Shuki Levy @Shuki-L",
+  "bin": {
+    "tscli": "./dist/index.js"
+  },
+  "bugs": "https://github.com/Shuki-L/ts-cli/issues",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^15.6.1",
+    "eslint": "^7.27.0",
+    "ts-node": "^10.0.0",
+    "typescript": "^4.3.2"
+  },
+  "engines": {
+    "node": ">=8.0.0"
+  },
+  "files": [
+    "/bin",
+    "/lib",
+    "/npm-shrinkwrap.json",
+    "/oclif.manifest.json"
+  ],
+  "homepage": "https://github.com/Shuki-L/ts-cli",
+  "keywords": [
+    "oclif"
+  ],
+  "license": "MIT",
+  "main": "lib/index.js",
+  "oclif": {
+    "commands": "./lib/commands",
+    "bin": "tscli",
+    "plugins": [
+      "@oclif/plugin-help"
+    ]
+  },
+  "repository": "Shuki-L/ts-cli",
+  "scripts": {
+    "posttest": "eslint . --ext .ts --config .eslintrc",
+    "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
+    "version": "oclif-dev readme && git add README.md",
+    "dev": "ts-node src/index.ts",
+    "build": "tsc && yarn link"
+  },
+  "types": "lib/index.d.ts"
+}
