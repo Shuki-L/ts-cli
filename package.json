@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "author": "Shuki Levy @Shuki-L",
   "bin": {
-    "tscli": "./dist/index.js"
+    "tscli": "./bin/index.js"
   },
   "bugs": "https://github.com/Shuki-L/ts-cli/issues",
   "dependencies": {},
@@ -16,12 +16,6 @@
   "engines": {
     "node": ">=8.0.0"
   },
-  "files": [
-    "/bin",
-    "/lib",
-    "/npm-shrinkwrap.json",
-    "/oclif.manifest.json"
-  ],
   "homepage": "https://github.com/Shuki-L/ts-cli",
   "keywords": [
     "oclif"
@@ -41,7 +35,7 @@
     "test": "nyc --extension .ts mocha --forbid-only \"test/**/*.test.ts\"",
     "version": "oclif-dev readme && git add README.md",
     "dev": "ts-node src/index.ts",
-    "build": "tsc && yarn link"
+    "build": "rm -rf ./bin && tsc"
   },
   "types": "lib/index.d.ts"
 }
